@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ClientController extends Controller
 {
@@ -14,7 +15,7 @@ class ClientController extends Controller
      */
     public function index()
     {   
-        $clients = Client::paginate(5);
+        $clients = Client::paginate(15);
         return view('client.index')->with('clients', $clients);
     }
 
@@ -42,8 +43,9 @@ class ClientController extends Controller
         ]);
 
         $client = Client::create($request->only('name','due','description'));
-        Session()->flash('message', 'Registro creado con éxito');
+        Session::flash('message', 'Registro creado con éxito');
         return redirect()->route('client.index');
+        // return view('client.index')->with('client', $client);
     }
 
     /**

@@ -25,6 +25,15 @@
             <th>Descripción</th>
         </thead>
         <tbody>
+          {{-- @forelse ($clients as $client)
+              
+          <tr>
+            <td>{{$client->name}}</td>
+            <td>{{$client->due}}</td>
+            <td>{{$client->description}}</td>
+          </tr>
+              
+          @endforelse --}}
           @foreach ($clients as $client)
             <tr>
               <td>{{$client->name}}</td>
