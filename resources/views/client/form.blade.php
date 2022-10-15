@@ -11,7 +11,7 @@
       </h1>
 
       <form action="{{ route('client.store') }}" method="POST">
-        <!--Token directive-->
+        <!--Token security directive-->
         @csrf
 
         <div class="mb-3">

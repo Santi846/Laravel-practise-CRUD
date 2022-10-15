@@ -10,7 +10,7 @@
         Listado de Clientes
       </h1>
 
-      <a href="{{ route('client.create') }}" class="btn btn-primary">Crear cliente</a>
+      <a href="{{ route('client.create')}}" class="btn btn-primary" method="GET">Crear cliente</a>
 
       @if (Session::has('message'))
         <div class="alert" alert-info my-5>
@@ -38,7 +38,7 @@
             <tr>
               <td>{{$client->name}}</td>
               <td>{{$client->due}}</td>
-              <td>{{$client->description}}</td>
+              {{-- <td>{{$client->description}}</td> --}}
             </tr>
           @endforeach 
         </tbody>
