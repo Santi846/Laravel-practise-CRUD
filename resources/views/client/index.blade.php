@@ -34,11 +34,12 @@
           </tr>
               
           @endforelse --}}
-          @foreach ($clients as $client)
+          
+          @foreach ($client as $client)
             <tr>
-              <td>{{$client->name}}</td>
-              <td>{{$client->due}}</td>
-              {{-- <td>{{$client->description}}</td> --}}
+              <td>{{$client->$name}}</td>
+              <td>{{$client->$due}}</td>
+              <td>{{$client->$description}}</td>
             </tr>
           @endforeach 
         </tbody>

@@ -37,15 +37,17 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-          'name' => 'required|max:15',
-          'due' => 'required|gte:50'
-        ]);
+         $request->validate([
+           'name' => 'required|max:15',
+           'due' => 'required|gte:50'
+         ]);
 
+        
         $client = Client::create($request->only('name','due','description'));
         Session::flash('message', 'Registro creado con éxito');
-        return redirect()->route('client.index');
-        // return view('client.index')->with('client', $client);
+        // return redirect()->with('client', $client);
+        // return redirect()->route('client.index');
+        return view('client.index')->with('client', $client);
     }
 
     /**
