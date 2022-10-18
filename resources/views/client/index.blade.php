@@ -10,7 +10,7 @@
         Listado de Clientes
       </h1>
 
-      <a href="{{ route('client.create')}}" class="btn btn-primary" method="GET">Crear cliente</a>
+      <a href="{{ route('client.create')}}" class="btn btn-primary" method="get">Crear cliente</a>
 
       @if (Session::has('message'))
         <div class="alert" alert-info my-5>

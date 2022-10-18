@@ -10,7 +10,7 @@
         Crear Clientes
       </h1>
 
-      <form action="{{ route('client.store') }}" method="POST">
+      <form action="{{ route('client.store')}}" method="post">
         <!--Token security directive-->
         @csrf
 
